@@ -1,0 +1,22 @@
+<div class="card">
+  <h2 [ngStyle]="{
+    color: title.length < 5 ? 'green' : 'blue'
+  }">{{ title }}</h2>
+  <p class="text" [ngClass]="{
+    red: textColor === 'red',
+    green: textColor === 'green'
+  }">{{ text }}</p>
+  <p
+    class="text"
+    [class.red]="textColor === 'red'"
+    [class.green]="textColor === 'green'"
+  >{{ text }}</p>
+  <div class="buttons">
+    <button (click)="textColor = 'red'">Set red</button>
+    <button (click)="textColor = 'green'">Set green</button>
+  </div>
+
+  <div>
+    <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandle()">
+  </div>
+</div>
