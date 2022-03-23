@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ICard } from "../app.component";
 
 @Component({
   selector: 'app-card-new',
@@ -6,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-new.component.css']
 })
 export class CardNewComponent implements OnInit {
+
+  @Input() card!: ICard
+  @Input() index!: number
+
   title = 'My Card Title'
   text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, nemo.'
 
   changeTitle() {
-    this.title = 'New Title'
+    this.card.title = 'New Title'
   }
 
   // inputHandle (event: any) {
@@ -19,7 +24,7 @@ export class CardNewComponent implements OnInit {
   // }
 
   inputHandle (value: any) {
-    this.title = value
+    this.card.title = value
   }
 
   ngOnInit(): void {
