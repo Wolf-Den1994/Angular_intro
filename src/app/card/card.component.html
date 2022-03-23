@@ -1,4 +1,15 @@
 <div class="card">
-  <h2>Card</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, nemo.</p>
+  <h2>{{ title }}</h2>
+  <p>{{ text }}</p>
+  <strong>Number: {{ number }}</strong>
+  <em>Array: {{ array }}</em>
+  <pre>{{ obj | json }}</pre>
+  <p>{{ getInfo() }}</p>
+
+  <div>
+<!--    <img src="{{ imgUrl }}" alt="image">-->
+    <img [src]="imgUrl" alt="image">
+    <br>
+    <button [disabled]="disabled">Enable</button>
+  </div>
 </div>
